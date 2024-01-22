@@ -3,10 +3,6 @@
 -- Add any additional keymaps here
 --
 
-local discipline = require("marksthought.discipline")
-
-discipline.cowboy()
-
 local keymap = vim.keymap
 local opts = { noremap = true, silent = true }
 
@@ -56,3 +52,9 @@ end, opts)
 -- keymap.set("n", "<leader>r", function()
 -- 	require("craftzdog.utils").replaceHexWithHSL()
 -- end)
+--
+-- enter normal mode
+keymap.set("i", "jk", "<ESC>", opts)
+
+-- move works while letters
+keymap.set("i", "<C-l>", "<ESC>wi", opts)

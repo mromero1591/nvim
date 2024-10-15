@@ -14,6 +14,15 @@ return {
         },
         opts = { skip = true },
       })
+
+      table.insert(opts.routes, {
+        filter = {
+          event = "msg_show",
+          find = "clipboard: error invoking xclip: Error: Can't open display: :14",
+        },
+        opts = { skip = true },
+      })
+
       local focused = true
       vim.api.nvim_create_autocmd("FocusGained", {
         callback = function()

@@ -13,6 +13,7 @@ return {
 					treesitter = true,
 					telescope = true,
 					which_key = true,
+					cmp = true,
 				},
 			})
 			-- load the colorscheme here

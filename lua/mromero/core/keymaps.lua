@@ -36,7 +36,7 @@ keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current buffer
 keymap.set("n", "<C-a>", "gg<S-v>G", { desc = "Selects all text" })
 
 -- Cursor movement
-keymap.set("n", "gb", "''", { noremap = true, silent = true, desc = "go back to previous cursor" })
+keymap.set("n", "<leader>gb", "''", { noremap = true, silent = true, desc = "go back to previous cursor" })
 
 -- Define a global variable to keep track of the current state (next or prev)
 local toggle_buffer = true
@@ -52,4 +52,4 @@ function ToggleBuffer()
 end
 
 -- Map the key combination 'bb' to the ToggleBuffer function
-vim.api.nvim_set_keymap("n", "bb", ":lua ToggleBuffer()<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>bb", ":lua ToggleBuffer()<CR>", { noremap = true, silent = true })

@@ -37,3 +37,19 @@ keymap.set("n", "<C-a>", "gg<S-v>G", { desc = "Selects all text" })
 
 -- Cursor movement
 keymap.set("n", "gb", "''", { noremap = true, silent = true, desc = "go back to previous cursor" })
+
+-- Define a global variable to keep track of the current state (next or prev)
+local toggle_buffer = true
+
+-- Create a function to toggle between :bnext and :bprev
+function ToggleBuffer()
+	if toggle_buffer then
+		vim.cmd("bnext")
+	else
+		vim.cmd("bprev")
+	end
+	toggle_buffer = not toggle_buffer
+end
+
+-- Map the key combination 'bb' to the ToggleBuffer function
+vim.api.nvim_set_keymap("n", "bb", ":lua ToggleBuffer()<CR>", { noremap = true, silent = true })
